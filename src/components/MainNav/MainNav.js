@@ -7,20 +7,21 @@ import MovieIcon from '@mui/icons-material/Movie';
 import TvIcon from '@mui/icons-material/Tv';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 export default function SimpleBottomNavigation() {
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = useState(0);
     const navigate = useNavigate();
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (value === 0) {
-            navigate('/')
+            navigate('/');
         } else if (value === 1) {
-            navigate('/movies')
+            navigate('/movies');
         } else if (value === 2) {
-            navigate('/series')
+            navigate('/series');
         } else if (value === 3) {
-            navigate('/search')
+            navigate('/search');
         }
     }, [value, navigate]);
 

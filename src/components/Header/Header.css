@@ -12,7 +12,7 @@
 }
 
 .logo {
-    cursor: pointer;
+    /* cursor: pointer; */
     max-width: 80%;
     height: auto;
     vertical-align: middle;
