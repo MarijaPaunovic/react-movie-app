@@ -9,3 +9,16 @@
         padding-top: 100px;
     }
 }
+
+.pageTitle {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: var(--dark-blue);
+}
+
+@media (max-width: 1000px){
+    .pageTitle {
+        font-size: 2rem;
+    }
+}

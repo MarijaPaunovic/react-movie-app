@@ -1,13 +1,22 @@
 import React from 'react';
+import { Badge } from '@mui/material';
 import { img_300, unavailableImage } from '../../config/config';
 import './SingleContent.css';
 
 function SingleContent({ id, poster, title, date, media_type, vote_average }) {
     return (
-        <div className='card'>
+        <div className='card' key={id}>
             <img className='poster' src={poster ? `${img_300}/${poster}` : unavailableImage} alt={title} />
+            <Badge
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                }}
+                badgeContent={vote_average}
+                color={vote_average > 6 ? 'success' : 'secondary'}
+            />
             <div className='wrapper'>
-                <h1 className='title'>{title}</h1>
+                <h2 className='title'>{title}</h2>
                 <p className='subTitle'>
                     {media_type === 'tv' ? 'TV Series' : 'Movie'}
                     <span className='subTitle'>{date}</span>
