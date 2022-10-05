@@ -26,11 +26,12 @@ function Series() {
 
     useEffect(() => {
         fetchMovies();
+        // eslint-disable-next-line
     }, [page, genreforURL])
 
     return (
         <div>
-            <h1 className='pageTitle'>TV Series</h1>
+            <h1 className='pageTitle'>Discover Series</h1>
             <Genres
                 type='tv'
                 genres={genres}

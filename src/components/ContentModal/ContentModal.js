@@ -57,11 +57,20 @@ export default function ContentModal({ children, media_type, id }) {
     useEffect(() => {
         fetchData();
         fetchVideo();
+        // eslint-disable-next-line
     }, []);
 
     return (
         <div>
-            <Button className='card' onClick={handleOpen}>{children}</Button>
+            <Button
+                className='card'
+                onClick={handleOpen}
+                sx={{
+                    color: '#032541',
+                    mb: 2
+                  }}
+                
+            >{children}</Button>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"

@@ -17,6 +17,7 @@ function Popular() {
 
   useEffect(() => {
     fetchPopular();
+    // eslint-disable-next-line
   }, [page])
 
 

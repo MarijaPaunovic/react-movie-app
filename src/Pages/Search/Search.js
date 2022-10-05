@@ -31,6 +31,7 @@ function Search() {
     useEffect(() => {
         window.scroll(0, 0);
         fetchSearch();
+        // eslint-disable-next-line
     }, [type, page]);
 
     return (
@@ -60,7 +61,7 @@ function Search() {
                     setType(newValue);
                     setPage(1);
                 }}
-                style={{ paddingBottom: 5 }}
+                style={{ paddingBottom: 20 }}
             >
                 <Tab style={{ width: '50%' }} label='Search Movie' />
                 <Tab style={{ width: '50%' }} label='Search TV Series' />

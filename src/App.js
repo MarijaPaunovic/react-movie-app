@@ -7,7 +7,6 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  // Link,
 } from "react-router-dom";
 import Popular from './Pages/Popular/Popular';
 import Movies from './Pages/Movies/Movies';
@@ -19,7 +18,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <div className='main'>
-        <Container maxWidth="sm">
+        <Container>
           <Routes>
             <Route path='/' element={<Popular />} />
             <Route path='/movies' element={<Movies />} />
