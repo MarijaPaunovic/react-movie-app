@@ -2,10 +2,11 @@ import React from 'react';
 import { Badge } from '@mui/material';
 import { img_300, unavailableImage } from '../../config/config';
 import './SingleContent.css';
+import ContentModal from '../ContentModal/ContentModal';
 
 function SingleContent({ id, poster, title, date, media_type, vote_average }) {
     return (
-        <div className='card' key={id}>
+        <ContentModal media_type={media_type} id={id}>
             <Badge
                 anchorOrigin={{
                     vertical: 'top',
@@ -22,7 +23,7 @@ function SingleContent({ id, poster, title, date, media_type, vote_average }) {
                     <span className='subTitle'>{date}</span>
                 </p>
             </div>
-        </div>
+        </ContentModal>
     )
 }
 

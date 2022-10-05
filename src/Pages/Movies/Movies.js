@@ -6,13 +6,12 @@ import CustomPagination from '../../components/Pagination/CustomPagination';
 import Genres from '../../components/Genres/Genres';
 import useGenres from '../../hooks/useGenre';
 
-function Movies() {
+const Movies = () => {
     const [page, setPage] = useState(1);
     const [content, setContent] = useState([]);
     const [numOfPages, setNumOfPages] = useState();
     const [genres, setGenres] = useState([]);
     const [selectedGenres, setSelectedGenres] = useState([]);
-
     const genreforURL = useGenres(selectedGenres);
 
     const fetchMovies = async () => {
@@ -25,8 +24,9 @@ function Movies() {
     };
 
     useEffect(() => {
+        window.scroll(0, 0);
         fetchMovies();
-    }, [page, genreforURL])
+    }, [genreforURL, page]);
 
     return (
         <div>
