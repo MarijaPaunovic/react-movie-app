@@ -6,15 +6,15 @@ import './SingleContent.css';
 function SingleContent({ id, poster, title, date, media_type, vote_average }) {
     return (
         <div className='card' key={id}>
-            <img className='poster' src={poster ? `${img_300}/${poster}` : unavailableImage} alt={title} />
             <Badge
                 anchorOrigin={{
                     vertical: 'top',
-                    horizontal: 'left',
+                    horizontal: 'right',
                 }}
                 badgeContent={vote_average}
                 color={vote_average > 6 ? 'success' : 'secondary'}
             />
+            <img className='poster' src={poster ? `${img_300}/${poster}` : unavailableImage} alt={title} />
             <div className='wrapper'>
                 <h2 className='title'>{title}</h2>
                 <p className='subTitle'>
