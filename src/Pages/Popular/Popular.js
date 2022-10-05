@@ -17,7 +17,6 @@ function Popular() {
 
   useEffect(() => {
     fetchPopular();
-    // eslint-disable-next-line
   }, [page])
 
 
@@ -26,7 +25,7 @@ function Popular() {
       <h1 className='pageTitle'>Popular</h1>
       <div className='popular'>
         {
-          content && content.map((c) => (
+          content.length && content.map((c) => (
             <SingleContent
               key={c.id}
               id={c.id}
