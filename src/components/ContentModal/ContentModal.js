@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Backdrop from '@mui/material/Backdrop';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
+import { Backdrop } from '@mui/material';
+import { Box } from '@mui/material';
+import { Modal } from '@mui/material';
+import { Fade } from '@mui/material';
+import { Button } from '@mui/material';
 import axios from 'axios';
 import { apiKey } from '../../config/apiKey';
 import {
@@ -35,8 +35,13 @@ export default function ContentModal({ children, media_type, id }) {
     const [content, setContent] = useState();
     const [video, setVideo] = useState();
 
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    const handleOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     const fetchData = async () => {
         const { data } = await axios.get(`https://api.themoviedb.org/3/${media_type}/${id}?${apiKey}&language=en-US`);
@@ -61,15 +66,15 @@ export default function ContentModal({ children, media_type, id }) {
     }, []);
 
     return (
-        <div>
+        <>
             <Button
                 className='card'
                 onClick={handleOpen}
                 sx={{
                     color: '#032541',
                     mb: 2
-                  }}
-                
+                }}
+
             >{children}</Button>
             <Modal
                 aria-labelledby="transition-modal-title"
@@ -141,6 +146,6 @@ export default function ContentModal({ children, media_type, id }) {
                     )}
                 </Fade>
             </Modal>
-        </div>
+        </>
     );
 }

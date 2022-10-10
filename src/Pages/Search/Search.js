@@ -4,7 +4,6 @@ import { apiKey } from '../../config/apiKey';
 import SingleContent from '../../components/SingleContent/SingleContent';
 import CustomPagination from '../../components/Pagination/CustomPagination';
 import TextField from '@mui/material/TextField';
-import './Search.css';
 import { Button, Tabs, Tab } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
